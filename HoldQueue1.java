@@ -3,6 +3,10 @@ package queue;
 import objects.Job;
 import java.util.*;
 
+/**
+ * @author Waad Muhammednoor
+ */
+
 public class HoldQueue1 extends JobQueue {
 
     public HoldQueue1() { //create a queue "hold queue #1"
