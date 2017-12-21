@@ -6,12 +6,12 @@ import java.util.LinkedList;
 
 public abstract class Queue  {
 
-  LinkedList queue = new LinkedList();  // creation of queue based on Linked List
+  LinkedList queue ;  // creation of queue based on Linked List
 
 	
 public Queue()
     {
-        queue=new LinkList();
+        queue=new LinkedList();
     }
 
 /**
