@@ -37,8 +37,7 @@ public class HoldQueue1 extends JobQueue {
 
     @Override //for delete an exsiting Job "the method in queue.class"
     public Job dequeue() {
-        if (!queue.isEmpty()) //if queue is not empty
-        {
+        if (!queue.isEmpty()) { //if queue is not empty
             return (Job) queue.remove(); //return the first Job
         }
             return null; //else return null
