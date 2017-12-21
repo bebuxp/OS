@@ -6,9 +6,7 @@ import java.util.LinkedList;
 
 public abstract class Queue  {
 
-  // specify object data and property fields
-	
-     LinkList queue ;  
+  LinkedList queue = new LinkedList();  // creation of queue based on Linked List
 
 	
 public Queue()
@@ -16,38 +14,39 @@ public Queue()
         queue=new LinkList();
     }
 
+/**
+   * check if queue have elements
+*/	
 
-
-// -----------------------------------------------------------------------
-// method functions used by Queue() object
-//
-
-// specify (i.e., design) interfaces details (arguments and return values)
-
-// --------------------
-// implement queue empty condition based on linked list .isEmpty() method
-
-public boolean isQueueEmpty()              // note "q" prefix to distinguish from similar 
-                               // function in linked-list package
+public boolean isQueueEmpty()        
+// note "q" prefix to distinguish from similar  
 {
 	 return Queue.isEmpty();               // (replace by correct call)
 }
   
 
 // --------------------
-public <T> void enqueue( T item)
+	
+/**
+     * Insert element at rear in Queue
+*/
+public  void enqueue( int item)
 {
-  Queue.insert(item);
+  queue.insert(item);
 }
-
+	
 // --------------------
 
-  public T dequeue()
-{
-
-   if(!queue.isEmpty())
+/**
+     * Removes elements from front of Queue 
+     */
+  public int dequeue()throws QueueEmptyException {
+           try{
+          if(!queue.isEmpty())
             queue.deleteFirst();
-	
-}
+           }catch(LinkedListEmptyException llee){
+                  throw new QueueEmptyException();
+           }
+    }
   
 }
