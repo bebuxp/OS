@@ -17,7 +17,7 @@ public class HoldQueue1 extends JobQueue {
     @Override //for insert a new Job "the method in queue.class"
     public void enqueue(Job newJob) {
         if (queue.isEmpty()) { //if queue is empty
-            queue.insert(newJob); //insert new Job to the queue
+            queue.add(newJob); //insert new Job to the queue
       } else { //if queue is not empty
             LinkedList<Job> temporary = new LinkedList<Job>(); //temporary linkedList for checking
             Job firstJob = new Job(); //for first Job in queue
@@ -28,9 +28,9 @@ public class HoldQueue1 extends JobQueue {
                     newJob = firstJob; //save firstJob in newJob
                     continue; //discard the rest command and restart again till visitig the whole queue
                 }
-                temporary.insert(firstJob); //if the burst time of the firstJob is > burst time of the new job, insert the firstJob into temporary linkedList
+                temporary.add(firstJob); //if the burst time of the firstJob is > burst time of the new job, insert the firstJob into temporary linkedList
             }
-            temporary.insert(newJob); //if temporary is empty, insert new Job
+            temporary.add(newJob); //if temporary is empty, insert new Job
             queue = temporary; //save the temporary in queue
         }
     }
@@ -39,7 +39,7 @@ public class HoldQueue1 extends JobQueue {
     public Job dequeue() {
         if (!queue.isEmpty()) //if queue is not empty
         {
-            return (Job) queue.deleteFirst(); //return the first Job
+            return (Job) queue.remove(); //return the first Job
         }
             return null; //else return null
     }
