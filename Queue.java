@@ -4,6 +4,11 @@ package queue;
 import java.util.LinkedList;
 import objects.Job;
 
+/**
+
+ * @author Ebtehal
+
+ */
 
 public abstract class Queue  {
 
@@ -31,7 +36,7 @@ public abstract class Queue  {
     */
   public  void enqueue( Job job)
    {
-        queue.insert(job);
+        queue.addLast(job);
    }
 	
 // -------------------------------
@@ -42,7 +47,7 @@ public abstract class Queue  {
      public Job dequeue()
     {
           if(!queue.isEmpty())
-            return (Job) queue.deleteFirst();
+            return (Job) queue.removeFirst();
 	  else 
 		  return null; 
     }
