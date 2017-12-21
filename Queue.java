@@ -2,51 +2,67 @@
 package queue;
 
 import java.util.LinkedList;
+import objects.Job;
 
 
 public abstract class Queue  {
 
-  LinkedList queue ;  // creation of queue based on Linked List
+  LinkedList queue queue=new LinkedList<Job>();  // creation of queue based on Linked List
 
 	
-public Queue()
-    {
-        queue=new LinkedList();
-    }
+//-------------------------	
+//    METHODS OF QUEUE.
+//-------------------------	
+	
+   /**
+      * check if queue have elements
+   */	
 
-/**
-   * check if queue have elements
-*/	
-
-public boolean isQueueEmpty()        
-// note "q" prefix to distinguish from similar  
-{
-	 return Queue.isEmpty();               // (replace by correct call)
-}
+  public boolean isQueueEmpty()         
+   {
+  	return queue.isEmpty();    // (replace by correct call)
+   }
   
 
-// --------------------
+// ------------------------------
 	
-/**
-     * Insert element at rear in Queue
-*/
-public  void enqueue( int item)
-{
-  queue.insert(item);
-}
+    /**
+       * Insert element at rear in Queue
+    */
+  public  void enqueue( Job job)
+   {
+        queue.insert(job);
+   }
 	
-// --------------------
+// -------------------------------
 
-/**
-     * Removes elements from front of Queue 
+    /**
+        * Removes elements from front of Queue 
      */
-  public int dequeue()throws QueueEmptyException {
-           try{
+     public Job dequeue()
+    {
           if(!queue.isEmpty())
-            queue.deleteFirst();
-           }catch(LinkedListEmptyException llee){
-                  throw new QueueEmptyException();
-           }
+            return (Job) queue.deleteFirst();
+	  else 
+		  return null; 
     }
+	
+//------------------------------
+    /**
+         * peek method used to retrieve the head ofqueue without remove it.
+    */
   
+	public abstract Object peek();
+	
+//-----------------------------------
+	
+        /**
+	* retrun the size of queue.
+	*/
+	
+       public int get_size()
+       {
+	  return queue.size();
+       }
+  	
 }
