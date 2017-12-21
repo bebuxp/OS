@@ -1,6 +1,10 @@
 package objects;
 import resources.*;
 
+/**
+ * @author Waad Muhammednoor
+ */
+
 public class Job implements Comparable<Job>{
     
 //Datafield
