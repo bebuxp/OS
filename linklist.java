@@ -15,12 +15,12 @@ class Node {
 
 
 
-public class LinkList {
+public class LinkedList {
     
 // Linked list object constructor
   
     
-    public void LinkList()
+    public void LinkedList()
     {
         this.first = null;   // list initially empty
         this.last = null ;
