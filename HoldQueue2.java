@@ -27,7 +27,7 @@ public class HoldQueue2 extends JobQueue {
   //-------------------------------------------
   
   /**
-     * Insert element at rear in Queue by rewrite the method in same class of queue.
+     * Insert element at rear in Queue 
 */
   
     @Override
@@ -37,7 +37,7 @@ public class HoldQueue2 extends JobQueue {
 //----------------------------------------------
   
   /**
-        * Removes elements from front of Queue by rewrite the method in same class of queue.
+        * Removes elements from front of Queue 
      */
     @Override
     public Job dequeue() {
