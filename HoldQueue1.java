@@ -1,9 +1,14 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package queue;
-
 import objects.Job;
 import java.util.*;
 
 /**
+ *
  * @author Waad Muhammednoor
  */
 
@@ -28,7 +33,7 @@ public class HoldQueue1 extends JobQueue {
             while (!queue.isEmpty()) { //if queue not empty
                 firstJob = (Job) queue.remove(); //delete the first Job in queue at save it in firstJob
                 if (newJob.getBurstTime() < firstJob.getBurstTime()) { //if the new job has burst time < first Job
-                    temporary.insert(newJob); //insert the new Job to the temporary linkedList
+                    temporary.add(newJob); //insert the new Job to the temporary linkedList
                     newJob = firstJob; //save firstJob in newJob
                     continue; //discard the rest command and restart again till visitig the whole queue
                 }
