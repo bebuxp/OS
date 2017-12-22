@@ -1,11 +1,11 @@
 package objects;
-import resources.*;
+import resources.*;//file resources made by us
 
 /**
  * @author Waad Muhammednoor
  */
 
-public class Job implements Comparable<Job>{
+public class Job implements Comparable<Job>{ //comparble for sort Job directly
     
 //Datafield
     private int arrivedTime;
