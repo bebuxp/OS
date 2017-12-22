@@ -9,7 +9,7 @@ import objects.Job;
 public abstract class JobQueue extends queue{    
 
     @Override
-    public abstract void enqueue(Job job);
+    public abstract void enqueue(Job item);
 
     @Override
     public abstract Job dequeue();
