@@ -1,5 +1,5 @@
 package objects;
-import resources.*;//file resources made by us
+import resources.*; //file resources
 
 /**
  * @author Waad Muhammednoor
@@ -16,7 +16,18 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
     private int burstTime;
     private int ID;
     
-//Constructure _non
+//Constructures
+    public Job() { //without parameters
+    }
+    public Job(int arrivedTime, int currentTime, int priority, int memorySize, int devicesNumber, int burstTime, int ID) { //with parameters
+        this.arrivedTime = arrivedTime;
+        this.currentTime = currentTime;
+        this.priority = priority;
+        this.memorySize = memorySize;
+        this.devicesNumber = devicesNumber;
+        this.burstTime = burstTime;
+        this.ID = ID;
+    }
     
 //Methods
 
@@ -78,5 +89,10 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
 
     public int getID() {
         return ID;
+    }
+    
+    @Override
+    public int compareTo(Job job) { 
+        return this.ID - job.ID; //ascending order
     }
 }
