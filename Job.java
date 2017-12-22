@@ -1,13 +1,14 @@
 package objects;
-import resources.*; //file resources
+//import resources.*;
 
 /**
- * @author Waad Muhammednoor
+ *
+ * @author Waad Muhammednour
  */
 
 public class Job implements Comparable<Job>{ //comparble for sort Job directly
     
-//Datafield
+    //Datafield
     private int arrivedTime;
     private int currentTime;
     private int priority;
@@ -16,7 +17,7 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
     private int burstTime;
     private int ID;
     
-//Constructures
+    //Constructures
     public Job() { //without parameters
     }
     public Job(int arrivedTime, int currentTime, int priority, int memorySize, int devicesNumber, int burstTime, int ID) { //with parameters
@@ -29,14 +30,14 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
         this.ID = ID;
     }
     
-//Methods
-
+    //Methods
+    
     //Setter Methods
-
+    
     public void setArrivedTime(int arrivedTime) {
         this.arrivedTime = arrivedTime;
     }
-
+    
     public void setCurrentTime(int currentTime) {
         this.currentTime = currentTime;
     }
@@ -44,29 +45,29 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
     public void setPriority(int priority) {
         this.priority = priority;
     }
-
+    
     public void setMemorySize(int memorySize) {
         this.memorySize = memorySize;
     }
-
+    
     public void setDevicesNumber(int devicesNumber) {
         this.devicesNumber = devicesNumber;
     }
-
+    
     public void setBurstTime(int burstTime) {
         this.burstTime = burstTime;
     }
-
+    
     public void setID(int ID) {
         this.ID = ID;
     }
-
+    
     //Getter Methods
     
     public int getArrivedTime() {
         return arrivedTime;
     }
-
+    
     public int getCurrentTime() {
         return currentTime;
     }
@@ -74,25 +75,25 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
     public int getPriority() {
         return priority;
     }
-
+    
     public int getMemorySize() {
         return memorySize;
     }
-
+    
     public int getDevicesNumber() {
         return devicesNumber;
     }
-
+    
     public int getBurstTime() {
         return burstTime;
     }
-
+    
     public int getID() {
         return ID;
     }
     
     @Override
-    public int compareTo(Job job) { 
+    public int compareTo(Job job) {
         return this.ID - job.ID; //ascending order
     }
 }
