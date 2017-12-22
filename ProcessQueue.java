@@ -3,7 +3,7 @@ package queue;
 
 import objects.Process;
 
-public abstract class ProcessQueue extends Queue{
+public abstract class ProcessQueue extends queue{
     
     
 /**
@@ -11,7 +11,6 @@ public abstract class ProcessQueue extends Queue{
  * @author Rahaf Albogami
  */
     
-    @Override 
     public abstract void enqueue(Process item);
     
     
