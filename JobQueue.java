@@ -1,9 +1,19 @@
-
 package queue;
-
 import objects.Job;
 
-public abstract class JobQueue extends Queue{
-    
- 
+/**
+ *
+ * @author Waad
+ */
+
+public abstract class JobQueue extends queue{    
+
+    @Override
+    public abstract void enqueue(Job job);
+
+    @Override
+    public abstract Job dequeue();
+
+    @Override
+    public abstract Job peek(); 
 }
