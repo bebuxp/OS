@@ -6,8 +6,7 @@ package objects;
  * @author Waad Muhammednour
  */
 
-public class Job implements Comparable<Job>{ //comparble for sort Job directly
-    
+public class Process implements Comparable<Process> { //comparble for sort Job directly
     //Datafield
     private int arrivedTime;
     private int currentTime;
@@ -16,11 +15,13 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
     private int devicesNumber;
     private int burstTime;
     private int ID;
+    private int threshold;
+    private int finishTime;
     
     //Constructures
-    public Job() { //without parameters
+    public Process() { //without parameters
     }
-    public Job(int arrivedTime, int currentTime, int priority, int memorySize, int devicesNumber, int burstTime, int ID) { //with parameters
+    public Process(int arrivedTime, int currentTime, int priority, int memorySize, int devicesNumber, int burstTime, int ID, int threshold, int finishTime) { //with parameters
         this.arrivedTime = arrivedTime;
         this.currentTime = currentTime;
         this.priority = priority;
@@ -28,6 +29,8 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
         this.devicesNumber = devicesNumber;
         this.burstTime = burstTime;
         this.ID = ID;
+        this.threshold = threshold;
+        this.finishTime = finishTime;
     }
     
     //Methods
@@ -62,6 +65,14 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
         this.ID = ID;
     }
     
+    public void setThreshold(int threshold) {
+        this.threshold = threshold;
+    }
+    
+    public void setFinishTime(int finishtime) {
+        this.finishTime = finishtime;
+    }
+    
     //Getter Methods
     
     public int getArrivedTime() {
@@ -92,8 +103,16 @@ public class Job implements Comparable<Job>{ //comparble for sort Job directly
         return ID;
     }
     
+    public int getThreshold() {
+        return threshold;
+    }
+    
+    public int getFinishTime() {
+        return finishTime;
+    }
+    
     @Override
-    public int compareTo(Job job) {
-        return this.ID - job.ID; //ascending order
+    public int compareTo(Process process) {
+        return this.ID - process.ID; //ascending order
     }
 }
