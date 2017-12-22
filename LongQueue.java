@@ -16,14 +16,14 @@ public class LongQueue extends ProcessQueue{
 
     @Override
     public void enqueue(Process newProc) {      
-            queue.add(newProc);
+            queue.addLast(newProc);
      
     }
 
     @Override
     public Process dequeue() {
         if (!queue.isEmpty())
-            return (Process)queue.remove();
+            return (Process)queue.removeFirst();
         
         return null;
     }
@@ -33,6 +33,7 @@ public class LongQueue extends ProcessQueue{
         return (Process)queue.peek();   
     }
     
+    @Override
     public boolean isQueueEmpty(){
   	return queue.isEmpty();    
    }
